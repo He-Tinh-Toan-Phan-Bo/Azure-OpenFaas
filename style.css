@@ -5,7 +5,7 @@
     box-sizing: border-box;
     color: #fff;
     background-color: transparent;
-
+    
 }
 
 #container {
@@ -59,7 +59,7 @@
     position: absolute;
     top: 35%;
     left: 60%;
-
+    
 }
 
 #weatherCountry {
@@ -124,7 +124,6 @@
   margin-right: auto;
   display: flex;
   justify-content: center;
-  padding-bottom: 1em;
 }
 
 .h1
@@ -132,47 +131,10 @@
     margin-left: 28rem;
     margin-top: 25rem;
     font-size: 1.5rem;
-    font-family: "myFirstFont";
+    font-family: "myFirstFont"; 
 }
 
 @font-face {
-    font-family: "myFirstFont";
-    src: url("fonts/ticking-timebomb-bb.regular.ttf");
-}
-
-/* New CSS for email section */
-#email-section {
-    position: absolute;
-    bottom: 2%;
-    right: 5%;
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-#email-section input[type="text"] {
-    height: 40px;
-    width: 250px;
-    padding: 0 15px;
-    border: none;
-    outline: none;
-    background: white;
-    font-size: 18px;
-    color: black;
-}
-
-#email-section input[type="text"]::placeholder {
-    color: #000000d0;
-}
-
-#email-section input[type="submit"] {
-    height: 40px;
-    background: #000000d0;
-    color: white;
-    font-weight: 700;
-    font-size: 18px;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 0 15px;
+    font-family: "myFirstFont"; 
+    src: url("fonts/ticking-timebomb-bb.regular.ttf"); 
 }
