@@ -177,24 +177,45 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 check.addEventListener("click", () => {
+<<<<<<< HEAD
     let url = "http://34.28.46.237:30080/function/weather";
     
     const cityName = city.value.trim();
     const countryName = country.value.trim();
     
+=======
+    // Đường dẫn đến function trên OpenFaaS
+    let url = "http://34.28.46.237:30080/function/weather";  // Cập nhật URL OpenFaaS
+
+    // Lấy giá trị thành phố và quốc gia từ form nhập liệu
+    const cityName = city.value.trim();
+    const countryName = country.value.trim();
+
+    // Kiểm tra nếu người dùng chưa nhập thông tin
+>>>>>>> edb0c602203bd5a4d417a0b5747a07091ab2ab8c
     if (!cityName || !countryName) {
         alert("Vui lòng nhập thành phố và quốc gia.");
         return;
     }
+<<<<<<< HEAD
     
+=======
+
+    // Gửi yêu cầu POST đến OpenFaaS function với dữ liệu thành phố và quốc gia
+>>>>>>> edb0c602203bd5a4d417a0b5747a07091ab2ab8c
     fetch(url, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+<<<<<<< HEAD
             city: cityName,
             country: countryName
+=======
+            city: cityName,      // Gửi tên thành phố
+            country: countryName // Gửi tên quốc gia
+>>>>>>> edb0c602203bd5a4d417a0b5747a07091ab2ab8c
         })
     })
     .then(response => response.json())
@@ -203,6 +224,7 @@ check.addEventListener("click", () => {
             alert('Có lỗi: ' + data.error);
             return;
         }
+<<<<<<< HEAD
         
         console.log('Received data:', data);
         
@@ -238,6 +260,28 @@ check.addEventListener("click", () => {
             } else if (description.includes('haze') || description.includes('mist') || description.includes('fog')) {
                 tempIcon.src = 'tempicons/atmosphere.svg';
             }
+=======
+
+        console.log('Received data:', data);
+        console.log('Location:', data.location);
+        console.log('Weather:', data.weather);
+        console.log('Temperature:', data.temperature);
+
+        // Cập nhật dữ liệu thời tiết lên giao diện
+        weatherCountry.innerText = `${data.location}`;
+        temperature.innerHTML = `${data.temperature}°<b>C</b>`;
+        weatherDescription.innerText = data.weather;
+
+        // Đổi icon dựa trên mô tả thời tiết
+        if (data.weather.includes("cloud")) {
+            tempIcon.src = `tempicons/clouds.svg`;
+        } else if (data.weather.includes("rain")) {
+            tempIcon.src = `tempicons/rain.svg`;
+        } else if (data.weather.includes("sun")) {
+            tempIcon.src = `tempicons/sun.svg`;
+        } else {
+            tempIcon.src = `tempicons/default.svg`;
+>>>>>>> edb0c602203bd5a4d417a0b5747a07091ab2ab8c
         }
     })
     .catch(error => {
