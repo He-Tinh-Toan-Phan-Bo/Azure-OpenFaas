@@ -12,7 +12,9 @@
     height: 100vh;
     width: 100%;
     position: relative;
-    background-image: url('https://source.unsplash.com/1600x900/?landscape');
+    /* background-image: url('https://source.unsplash.com/1600x900/?landscape'); */
+    background-image: url('images/bg_web_weather.jpg');
+
     display: flex;
 }
 
@@ -137,4 +139,14 @@
 @font-face {
     font-family: "myFirstFont"; 
     src: url("fonts/ticking-timebomb-bb.regular.ttf"); 
+}
+
+#longitude, #latitude {
+    display: none;
+}
+#container {
+    background-image: url('images/bg.jpg'); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
